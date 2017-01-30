@@ -1,5 +1,6 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from fixture.session import SessionHelper
 
 
 class Application:
@@ -7,10 +8,11 @@ class Application:
     def __init__(self):
         self.wd = WebDriver(firefox_binary=FirefoxBinary("/Applications/FirefoxESR.app/Contents/MacOS/firefox-bin"))
         self.wd.implicitly_wait(60)
+        self.session = SessionHelper(self)
 
-    def logout(self):
+    def open_home_page(self):
         wd = self.wd
-        wd.find_element_by_link_text("Logout").click()
+        wd.get("http://localhost:8888/addressbook/index.php")
 
     def create_group(self, group):
         wd = self.wd
@@ -32,17 +34,6 @@ class Application:
         wd.find_element_by_name("submit").click()
         # return to home page
         wd.find_element_by_link_text("group page").click()
-
-    def login(self, username, password):
-        wd = self.wd
-        wd.get("http://localhost:8888/addressbook/index.php")
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys(username)
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys(password)
-        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
     def destroy(self):
         self.wd.quit()
