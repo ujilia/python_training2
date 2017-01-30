@@ -17,21 +17,21 @@ class test_add_group(unittest.TestCase):
         self.wd.implicitly_wait(60)
     
     def test_add_group(self):
-        wd = self.wd
-        self.login(wd, username="admin", password="secret")
-        self.create_group(wd, Group(name="2222", header="222", footer="222"))
-        self.logout(wd)
+        self.login(username="admin", password="secret")
+        self.create_group(Group(name="2222", header="222", footer="222"))
+        self.logout()
 
     def test_add_empty_group(self):
-        wd = self.wd
-        self.login(wd, username="admin", password="secret")
-        self.create_group(wd, Group(name="", header="", footer=""))
-        self.logout(wd)
+        self.login(username="admin", password="secret")
+        self.create_group(Group(name="", header="", footer=""))
+        self.logout()
 
-    def logout(self, wd):
+    def logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def create_group(self, wd, group):
+    def create_group(self, group):
+        wd = self.wd
         # open groups page
         wd.find_element_by_link_text("groups").click()
         # init group creation
@@ -51,7 +51,8 @@ class test_add_group(unittest.TestCase):
         # return to home page
         wd.find_element_by_link_text("group page").click()
 
-    def login(self, wd, username, password):
+    def login(self, username, password):
+        wd = self.wd
         wd.get("http://localhost:8888/addressbook/index.php")
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
