@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 
 class Application:
+
     def __init__(self):
         self.wd = WebDriver(firefox_binary=FirefoxBinary("/Applications/FirefoxESR.app/Contents/MacOS/firefox-bin"))
         self.wd.implicitly_wait(60)
