@@ -1,7 +1,10 @@
 class ContactHelper:
-
     def __init__(self, app):
         self.app = app
+
+    def open_home_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
 
     def create(self, contact):
         wd = self.app.wd
@@ -87,7 +90,6 @@ class ContactHelper:
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
         wd.find_element_by_name("update").click()
-
 
     def delete_first_contact(self):
         wd = self.app.wd
