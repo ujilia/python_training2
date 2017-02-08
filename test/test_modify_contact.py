@@ -18,4 +18,3 @@ def test_modify_contact(app):
                 fax="1234567", email="99994", email2="32344", email3="2345678", homepage="765", byear="2000",
                 ayear="2010", address2="k876574", phone2="0809775",
                 notes="3456789"))
-    app.contact.return_to_home_page()
