@@ -122,7 +122,7 @@ class ContactHelper:
     def count(self):
         wd = self.app.wd
         self.open_home_page()
-        return len(wd.find_elements_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"))
+        return len(wd.find_elements_by_name("selected[]"))
 
     contact_cache = None
 
