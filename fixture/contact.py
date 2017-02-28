@@ -98,6 +98,7 @@ class ContactHelper:
     contact_cache = None
 
     def get_contact_list(self):
+        # global address
         if self.contact_cache is None:
             wd = self.app.wd
             self.open_home_page()
@@ -109,9 +110,10 @@ class ContactHelper:
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
                 all_phones = cells[5].text
                 all_emails = cells[4].text
+                address = cells[3].text
                 self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id,
                                                   all_phones_from_home_page=all_phones,
-                                                  all_emails_from_home_page=all_emails))
+                                                  all_emails_from_home_page=all_emails, address=address))
         return list(self.contact_cache)
 
     def open_contact_to_edit_by_index(self, index):
@@ -141,8 +143,9 @@ class ContactHelper:
         email = wd.find_element_by_name("email").get_attribute("value")
         email2 = wd.find_element_by_name("email2").get_attribute("value")
         email3 = wd.find_element_by_name("email3").get_attribute("value")
+        address = wd.find_element_by_name("address").text
         return Contact(firstname=firstname, lastname=lastname, id=id, home=home, mobile=mobile,
-                       work=work, phone2=phone2, email=email, email2=email2, email3=email3)
+                       work=work, phone2=phone2, email=email, email2=email2, email3=email3, address=address)
 
     def get_contact_from_view_page(self, index):
         wd = self.app.wd
