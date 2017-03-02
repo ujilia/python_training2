@@ -11,20 +11,24 @@ def test_contact_info(app):
     assert contact_from_home_page.address == contact_from_edit_page.address
 
 
-def clear(s):
+def clear_phone(s):
     return re.sub("[() -]", "", s)
+
+
+def clear_email(s1):
+    return re.sub("[() ]", "", s1)
 
 
 def merge_phones_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",
-                            map(lambda x: clear(x),
+                            map(lambda x: clear_phone(x),
                                 filter(lambda x: x is not None,
                                        [contact.home, contact.mobile, contact.work, contact.phone2]))))
 
 
 def merge_emails_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",
-                            map(lambda x: clear(x),
+                            map(lambda x: clear_email(x),
                                 filter(lambda x: x is not None,
                                        [contact.email, contact.email2, contact.email3]))))
 
