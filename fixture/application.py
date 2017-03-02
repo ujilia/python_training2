@@ -1,4 +1,5 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from fixture.session import SessionHelper
 from fixture.group import GroupHelper
@@ -7,11 +8,19 @@ from fixture.contact import ContactHelper
 
 class Application:
 
-    def __init__(self):
-        self.wd = WebDriver(firefox_binary=FirefoxBinary("/Applications/FirefoxESR.app/Contents/MacOS/firefox-bin"))
+    def __init__(self, browser, base_url):
+        if browser == "firefox":
+            self.wd = WebDriver(firefox_binary=FirefoxBinary("/Applications/FirefoxESR.app/Contents/MacOS/firefox-bin"))
+        elif browser == "chrome":
+            self.wd = webdriver.Chrome(executable_path='/Users/Julia/Projects/BrowserDriver/chromedriver')
+        elif browser == "opera":
+            self.wd == webdriver.Opera(executable_path='/Users/Julia/Projects/BrowserDriver/operadriver')
+        else:
+            raise ValueError("Unrecognized browser %s" % browser)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
+        self.base_url = base_url
 
     def is_valid(self):
         try:
@@ -22,7 +31,7 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost:8888/addressbook/index.php")
+        wd.get(self.base_url)
 
     def destroy(self):
         self.wd.quit()
