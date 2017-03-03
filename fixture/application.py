@@ -11,6 +11,9 @@ class Application:
     def __init__(self, browser, base_url):
         if browser == "firefox":
             self.wd = WebDriver(firefox_binary=FirefoxBinary("/Applications/FirefoxESR.app/Contents/MacOS/firefox-bin"))
+        elif browser == "ie":
+            # IE is for tests on Windows
+            self.wd = webdriver.Ie()
         elif browser == "chrome":
             self.wd = webdriver.Chrome(executable_path='/Users/Julia/Projects/BrowserDriver/chromedriver')
         elif browser == "opera":
