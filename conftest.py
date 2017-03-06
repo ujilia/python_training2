@@ -13,10 +13,10 @@ target = None
 def load_config(file):
     global target
     if target is None:
-        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--target"))
+        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
         with open(config_file) as f:
             target = json.load(f)
-        return target
+    return target
 
 
 @pytest.fixture
@@ -33,11 +33,16 @@ def app(request):
 @pytest.fixture(scope="session")
 def db(request):
     db_config = load_config(request.config.getoption("--target"))["db"]
-    dbfixture = DbFixture(host=db_config['host'], port=db_config['port'], name=db_config['name'], user=['user'], password=['password'])
+    dbfixture = DbFixture(host=db_config['host'], port=db_config['port'], name=db_config['name'],
+                          user=db_config['user'],
+                          password=db_config['password'])
+
     def fin():
         dbfixture.destroy()
+
     request.addfinalizer(fin)
     return dbfixture
+
 
 @pytest.fixture(scope="session", autouse=True)
 def stop(request):
