@@ -6,7 +6,7 @@
     },
   "db": {
     "host": "localhost",
-    "port": "8889",
+    "port": "3306",
     "name": "addressbook",
     "user": "root",
     "password": "root"
