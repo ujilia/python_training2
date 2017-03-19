@@ -29,7 +29,21 @@ class ContactHelper:
         self.open_home_page()
         # row = wd.find_elements_by_name("entry")[index]
         # open modification form
-        wd.find_elements_by_css_selector("img[title=Edit]")[index].click()
+        self.open_contact_to_edit_by_index(index)
+        # as2 = row.find_elements_by_tag_name("td")[7].find_element_by_tag_name("a")
+        # fill in contact form
+        self.fill_in_contact_form(new_contact_data)
+        # submit modification form
+        wd.find_element_by_name("update").click()
+        self.return_to_home_page()
+        self.contact_cache = None
+
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        self.open_home_page()
+        # row = wd.find_elements_by_name("entry")[index]
+        # open modification form
+        self.open_contact_to_edit_by_id(id)
         # as2 = row.find_elements_by_tag_name("td")[7].find_element_by_tag_name("a")
         # fill in contact form
         self.fill_in_contact_form(new_contact_data)
@@ -41,6 +55,10 @@ class ContactHelper:
     def select_contact_by_index(self, index):
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def fill_in_contact_form(self, contact):
         wd = self.app.wd
@@ -85,6 +103,16 @@ class ContactHelper:
         self.return_to_home_page()
         self.contact_cache = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_contact_by_id(id)
+        # init contact deletion
+        wd.find_element_by_css_selector("input[value='Delete']").click()
+        wd.switch_to_alert().accept()
+        self.return_to_home_page()
+        self.contact_cache = None
+
     def return_to_home_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_name("Send e-Mail")) > 0):
@@ -122,6 +150,11 @@ class ContactHelper:
         row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")[7]
         cell.find_element_by_tag_name("a").click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id).click()
 
     def open_contact_view_by_index(self, index):
         wd = self.app.wd
