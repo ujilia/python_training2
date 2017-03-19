@@ -24,12 +24,12 @@ for o, a in opts:
 
 
 def random_name(prefix, maxlen):
-    symbols = string.ascii_letters + " "*5 + "-"*5
+    symbols = string.ascii_letters + "-"*5
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
 def random_address(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + " "*5 + ","*5 + "."*5 + "-"*5
+    symbols = string.ascii_letters + string.digits + ","*5 + "."*5 + "-"*5
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
