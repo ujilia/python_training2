@@ -3,8 +3,8 @@ from model.group import Group
 import random
 
 
-def test_add_contact_to_group(app, db, orm):
-    if len(db.get_contact_list()) == 0:
+def test_add_contact_to_group(app, orm):
+    if len(orm.get_contact_list()) == 0:
         app.contact.create(Contact(firstname="fsff", middlename="fsf", lastname="fsdf", nickname="sdff", title="dsfdsf",
                                    company="fsfdfdf",
                                    address="4242", home="3424", mobile="2344", work="4234",
@@ -12,10 +12,10 @@ def test_add_contact_to_group(app, db, orm):
                                    byear="1199",
                                    ayear="2423", address2="324eeee", phone2="324rew",
                                    notes="324erwsd"))
-    if len(db.get_group_list()) == 0:
+    if len(orm.get_group_list()) == 0:
         app.group.create(Group(name="new_name", header="new_header", footer="new_footer"))
-    old_contacts = db.get_contact_list()
-    groups = db.get_group_list()
+    old_contacts = orm.get_contact_list()
+    groups = orm.get_group_list()
     contact = random.choice(old_contacts)
     group = random.choice(groups)
     if contact in orm.get_contacts_in_group(group):
