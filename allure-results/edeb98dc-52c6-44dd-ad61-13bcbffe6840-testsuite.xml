@@ -1,0 +1,66 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1490907187384" stop="1490907200028">
+  <name>test.test_add_group</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1490907187384" status="passed" stop="1490907193218">
+      <name>test_add_group[None:::]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1490907193219" status="passed" stop="1490907194574">
+      <name>test_add_group[None:namerx:headerer0eYzxvtjt:footerR6gh4MJh3dnlDhKzx]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1490907194575" status="passed" stop="1490907195888">
+      <name>test_add_group[None:name6:header31U9z6DlN:footerj]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1490907195889" status="passed" stop="1490907197253">
+      <name>test_add_group[None:name8lEh:headerpBYtA30DkwQ30xgkhw:footerNeeNIw]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1490907197254" status="passed" stop="1490907198803">
+      <name>test_add_group[None:namehx:headerkqsc2VPDpBsAmO2:footerVy]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1490907198803" status="passed" stop="1490907200028">
+      <name>test_add_group[None:name0wXW3V:headerl7dSCOp7a1D11YW9:footerJr7W105D3]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="93442-MainThread"/>
+        <label name="host" value="Julias-rMBP.fritz.box"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

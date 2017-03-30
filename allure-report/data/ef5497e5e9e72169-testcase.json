@@ -1,0 +1,44 @@
+{
+  "uid" : "ef5497e5e9e72169",
+  "name" : "test_add_group[None:namehx:headerkqsc2VPDpBsAmO2:footerVy]",
+  "title" : "Test add group [None:namehx:headerkqsc2VPDpBsAmO2:footerVy]",
+  "time" : {
+    "start" : 1490907197254,
+    "stop" : 1490907198803,
+    "duration" : 1549
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "93d71b4198ead23",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "Julias-rMBP.fritz.box"
+  }, {
+    "name" : "thread",
+    "value" : "93442-MainThread"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,69 @@
+{
+  "testCases" : [ {
+    "uid" : "1db5c9c8ef6de964",
+    "name" : "test_add_group[None:::]",
+    "title" : "Test add group [None:::]",
+    "time" : {
+      "start" : 1490907187384,
+      "stop" : 1490907193218,
+      "duration" : 5834
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "9da9bcf469efc4de",
+    "name" : "test_add_group[None:namerx:headerer0eYzxvtjt:footerR6gh4MJh3dnlDhKzx]",
+    "title" : "Test add group [None:namerx:headerer0eYzxvtjt:footerR6gh4MJh3dnlDhKzx]",
+    "time" : {
+      "start" : 1490907193219,
+      "stop" : 1490907194574,
+      "duration" : 1355
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "3b223dd298367098",
+    "name" : "test_add_group[None:name6:header31U9z6DlN:footerj]",
+    "title" : "Test add group [None:name6:header31U9z6DlN:footerj]",
+    "time" : {
+      "start" : 1490907194575,
+      "stop" : 1490907195888,
+      "duration" : 1313
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "d93049dbb58d18f0",
+    "name" : "test_add_group[None:name8lEh:headerpBYtA30DkwQ30xgkhw:footerNeeNIw]",
+    "title" : "Test add group [None:name8lEh:headerpBYtA30DkwQ30xgkhw:footerNeeNIw]",
+    "time" : {
+      "start" : 1490907195889,
+      "stop" : 1490907197253,
+      "duration" : 1364
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "ef5497e5e9e72169",
+    "name" : "test_add_group[None:namehx:headerkqsc2VPDpBsAmO2:footerVy]",
+    "title" : "Test add group [None:namehx:headerkqsc2VPDpBsAmO2:footerVy]",
+    "time" : {
+      "start" : 1490907197254,
+      "stop" : 1490907198803,
+      "duration" : 1549
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "e5241366dc599966",
+    "name" : "test_add_group[None:name0wXW3V:headerl7dSCOp7a1D11YW9:footerJr7W105D3]",
+    "title" : "Test add group [None:name0wXW3V:headerl7dSCOp7a1D11YW9:footerJr7W105D3]",
+    "time" : {
+      "start" : 1490907198803,
+      "stop" : 1490907200028,
+      "duration" : 1225
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}
